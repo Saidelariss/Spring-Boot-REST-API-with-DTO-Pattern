@@ -10,6 +10,7 @@ import org.sid.ecom.entities.Category;
 
 
 @Data @AllArgsConstructor @NoArgsConstructor
+//Dans une classe DTO, on ne met que les informations dont nous aurons besoin dans le frontend
 public class ProductDTO {
 
     private String id;

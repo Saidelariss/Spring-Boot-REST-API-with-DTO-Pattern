@@ -8,6 +8,7 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 
 @Service
+//mapper : le Mapping des Entités vers les DTO et vice verça
 public class CatalogMappers {
     public ProductDTO fromProduct(Product product){
         ProductDTO productDTO=new ProductDTO();

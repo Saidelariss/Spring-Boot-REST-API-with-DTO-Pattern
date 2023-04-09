@@ -17,18 +17,14 @@ public class ProductRestController {
 
     ProductService productService;
 
-
     //consultation
     @GetMapping(path="/products")
     public List<ProductDTO> productList(){
         return productService.listProduct();
-     //Spring utilisera Jackson pour sérialiser cette instance en JSON et renvoyer la réponse au client
+     //Spring utilisera implicitement la bibliothèque Jackson pour sérialiser les objets java en JSON
+    //Ce sont juste les DTO qui seront sérialisés en format json et non pas les entités jpa
     }
 
-    @GetMapping(path="/products/{id}")
-    public Product getProducts(@PathVariable(name = "id") String id){
-        return productRepository.findById(id).get();
-    }
 
     //ajout
     @PostMapping(path="/products")
@@ -38,16 +34,5 @@ public class ProductRestController {
         return productRepository.save(product);*/
     }
 
-    //Mise à jour
-    @PutMapping(path="/products/{id}")
-    public Product updateProduct(@RequestBody Product product,@PathVariable String id){
-        product.setId(id);
-        return productRepository.save(product);
-    }
-
-    @DeleteMapping(path="/products/{id}")
-    public void updateProduct(@PathVariable String id){
-      productRepository.deleteById(id);
-    }
 
 }

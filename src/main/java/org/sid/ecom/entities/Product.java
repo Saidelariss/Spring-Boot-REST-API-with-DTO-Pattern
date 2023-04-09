@@ -10,6 +10,7 @@ import lombok.NoArgsConstructor;
 
 @Entity
 @Data @AllArgsConstructor @NoArgsConstructor
+//Entité JPA
 public class Product {
     @Id
     private String id;

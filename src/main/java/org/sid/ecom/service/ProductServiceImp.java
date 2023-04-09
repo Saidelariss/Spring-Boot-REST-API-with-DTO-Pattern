@@ -25,7 +25,9 @@ public class ProductServiceImp implements ProductService{
 
 
     public ProductDTO save(ProductDTO productDTO) {
-      /*  Product product=new Product();
+        /* Pour faire le mapping entre les entités JPA et les DTOs, le code le plus basique à écrire correspond à ceci
+            (mais ce n'est pas pratique, c'est la raison pour laquelle on fait appel au mapper).
+        Product product=new Product();
         product.setName(productDTO.getName());
         product.setPrice(productDTO.getPrice());
         product.setQuantity(product.getQuantity());
@@ -36,11 +38,11 @@ public class ProductServiceImp implements ProductService{
         product.setCategory(category);
 
         return productRepository.save(product);
-    }
+    }  */
 
-       */
-
+        //mapper :
         Product product= catalogMappers.fromProductDTO(productDTO);
+        //UUID.randomUUID().toString() génère des chaines de caractères de manière unique
         product.setId(UUID.randomUUID().toString());
         Product savedProduct =  productRepository.save(product);
         return catalogMappers.fromProduct(savedProduct);

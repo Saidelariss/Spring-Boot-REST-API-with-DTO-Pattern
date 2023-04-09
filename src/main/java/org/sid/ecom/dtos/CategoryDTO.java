@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Data @AllArgsConstructor @NoArgsConstructor
+//Dans une classe DTO, on ne met que les informations dont nous aurons besoin dans le frontend
 public class CategoryDTO {
     private Long id;
     private String name;

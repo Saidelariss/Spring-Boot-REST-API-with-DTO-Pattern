@@ -19,7 +19,7 @@ public class EcomApplication {
         SpringApplication.run(EcomApplication.class, args);
     }
 
-    @Bean
+    @Bean //cette méthode sera exécuter au démarrage de l'application
     public CommandLineRunner start(ProductRepository productRepository, CategoryRepository categoryRepository){
         return args -> {
             Stream.of("Computer","Printers","Smart Phones").forEach(name->{
